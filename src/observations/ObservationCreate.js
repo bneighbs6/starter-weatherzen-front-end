@@ -37,7 +37,7 @@ function ObservationCreate() {
     return (
         <main>
             <h1 className="mb-3">Create Observation</h1>
-            <ErrorAlert error = {error} />
+            <ErrorAlert error={error} />
             <form onSubmit={submitHandler} className="mb-4">
                 <div className="row mb-3">
                     <div className="col-6 form-group">
