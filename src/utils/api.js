@@ -2,7 +2,7 @@
  * Defines the base URL for the API.
  * The default values is overridden by the `API_BASE_URL` environment variable.
  */
-const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:3000";
+const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:8000";
 
 /**
  * Defines the default headers for these functions to work with `json-server`
@@ -58,5 +58,10 @@ export async function createObservation(observation, signal) {
 }
 
 export async function listObservations(signal) {
-  return [];  
+  const url = `${API_BASE_URL}/observations`;
+  const options = {
+    headers,
+    signal,
+  };
+  return await fetchJson(url, options); 
 }
